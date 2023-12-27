@@ -56,3 +56,61 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+function sendToWA() {
+    
+    try {
+        var nomorWhatsApp = '6281615650796';
+        var nama = document.getElementById('nama').value;
+        var email = document.getElementById('email').value;
+        var pesan = document.getElementById('pesan').value;
+        
+        if (!nama || !email || !pesan) {
+            alert('Harap isi semua form sebelum mengirim pesan.');
+            return;
+        }
+        
+        // FUngsi Validasi EMail
+        
+        function validateEmail() {
+            var emailInput = document.getElementById('email');
+            var email = emailInput.value;
+        
+            // Pola ekspresi reguler untuk validasi email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+            if (emailRegex.test(email)) {
+                // Email valid
+                return true;
+            } else {
+                // Email tidak valid
+                return false;
+            }
+        }
+
+        // memanggil alert email valid
+        
+        if (!validateEmail()) {
+            alert('Harap isi email dengan benar sebelum mengirim pesan.');
+            return;
+        }
+        
+        var linkWhatsApp = 'https://wa.me/' + nomorWhatsApp +
+                           '?text=Nama : %20' + encodeURIComponent(nama) +
+                           '%0AEmail : %20' + encodeURIComponent(email) +
+                           '%0AMessage : %20' + encodeURIComponent(pesan);
+        window.open(linkWhatsApp, '_blank');
+    } catch (error) {
+        
+        // Menangkap dan menanggapi kesalahan
+        alert('Terjadi kesalahan: ' + error.message);
+    }
+}
+var myForm = document.getElementById('my-form');
+
+myForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    myForm.reset();
+    sendToWhatsApp();
+});

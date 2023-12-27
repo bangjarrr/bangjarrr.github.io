@@ -207,7 +207,7 @@ body {
 
 /* Skill Start */
 
-.project a {
+.project .show-project a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,7 +220,7 @@ body {
     margin: 50px 0px;
 }
 
-.project a:hover {
+.project .show-project a:hover {
     transform: scale(0.9);
     box-shadow: 5px 5px 20px var(--purple);
     transition: all;
@@ -371,16 +371,6 @@ body {
     }
 }
 
-.footer {
-    text-align: center;
-    margin: 20px 0px;
-}
-
-.footer p, a {
-    color: var(--bg);
-    font-size: 12px;
-    margin: 10px;
-}
 /* Skill Finish */
 
 /* COntact start */
@@ -433,7 +423,7 @@ form input:focus {
 
 @media only screen and (min-width: 769px) {
     .contact
-.contact-title h1 {
+    .contact-title h1 {
     text-align: center;
     font-size: 30px;
     color: var(--bg);
@@ -463,7 +453,7 @@ form input , textarea{
 
 .contact
 .contact-form
-form input:focus {
+form :focus {
     background: var(--white);
     color: var(--bg);
 }
@@ -477,4 +467,16 @@ form input:focus {
     padding: 10px 50px;
     box-shadow: 2px 2px 5px var(--purple);
 }
+}
+
+
+.footer {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.footer p, a {
+    color: var(--bg);
+    font-size: 12px;
+    margin: 10px;
 }
