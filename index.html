@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BlogPribadi || Alfajjar</title>
+    <link rel="icon" type="image/x-icon" href="./img/logo.png" />
 
     <!-- CSS Default -->
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -12,21 +13,30 @@
     <script src="https://unpkg.com/feather-icons"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Link Animasi saat di scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- AOS -->
+    <script>
+      AOS.init();
+    </script>
   </head>
   <body>
     <!-- Navbar Selesai -->
 
     <nav class="navbar">
-      <div class="navbar-brand">
+      <div class="navbar-brand" data-aos="fade-right" data-aos-duration="2000">
         <img src="./img/profil.jpg" alt="Logo" />
         <h5>Portofolio || Alfajjar</h5>
       </div>
 
-      <div class="menu-icon" id="menu-icon">
+      <div class="menu-icon" id="menu-icon" data-aos="fade-left" data-aos-duration="2000">
         <i data-feather="menu"></i>
       </div>
 
-      <div class="menu-icon hidden" id="menu-iconX">
+      <div class="menu-icon hidden" id="menu-iconX" >
         <i data-feather="x"></i>
       </div>
       <ul class="nav-item hidden" id="menu-list">
@@ -55,16 +65,16 @@
 
     <section class="home" id="home">
       <div class="title">
-        <h1>Mochammad Alfajjar || Just a student</h1>
+        <h1 data-aos="fade-down" data-aos-duration="2000">Mochammad Alfajjar || Just a student</h1>
       </div>
       <div class="description">
-        <p>
+        <p data-aos="fade-right" data-aos-duration="2000">
           Hai everyone, welcome to Fajjar Pages💫 the harder you work for
           something, the greater you will feel when you achieve it✨. Enjoy this
           moment and enjoy exploring⚡.
         </p>
       </div>
-      <div class="sosial-media">
+      <div class="sosial-media" data-aos="fade-left" data-aos-duration="2000">
         <a href="https://github.com/alfajarjaya"
           ><i data-feather="github"></i
         ></a>
@@ -87,30 +97,30 @@
     <!-- Content Skill Start -->
 
     <section class="skill skill-1" id="skill">
-      <h1>My - Skill</h1>
-      <div class="my-skill">
+      <h1 data-aos="fade-up" data-aos-duration="2000">My - Skill</h1>
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/HTML.png" alt="HTML" />
       </div>
-      <div class="my-skill">
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/CSS.png" alt="CSS" />
       </div>
-      <div class="my-skill">
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/JS.png" alt="JavaScript" />
       </div>
-      <div class="my-skill">
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/PY.png" alt="Python" />
       </div>
-      <div class="my-skill">
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/GIT.png" alt="GIT" />
       </div>
-      <div class="my-skill">
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/GITHUB.png" alt="Github" />
       </div>
     </section>
 
     <section class="skill skill-2">
-      <h1>My - Skill</h1>
-      <div class="my-skill">
+      <h1 data-aos="fade-up" data-aos-duration="2000">My - Skill</h1>
+      <div class="my-skill" data-aos="zoom-in" data-aos-duration="2000">
         <img src="./img/HTML.png" alt="HTML" />
         <img src="./img/CSS.png" alt="CSS" />
         <img src="./img/JS.png" alt="JavaScript" />
@@ -125,16 +135,16 @@
     <!-- Content Project Start -->
 
     <section class="project" id="project">
-      <h1>My Project</h1>
+      <h1 data-aos="fade-up" data-aos-duration="2000">My Project</h1>
       <div class="my-project">
-        <div class="project-item">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="2000">
           <img src="./img/Cafe.png" alt="WorkCafe" />
           <p>
             Website market coffe. Show source code
             <a href="https://instagram.com/bang_jarrrz">in bio</a>
           </p>
         </div>
-        <div class="project-item">
+        <div class="project-item" data-aos="zoom-in" data-aos-duration="2000">
           <img src="./img/ATM.png" alt="pyATM" />
           <p>
             ATM Simulation using Python. Show source code
@@ -142,7 +152,7 @@
           </p>
         </div>
       </div>
-      <div class="show-project">
+      <div class="show-project" data-aos="fade-down" data-aos-duration="2000">
         <a href="/my-project/">Show All Project</a>
       </div>
     </section>
@@ -151,7 +161,7 @@
 
     <!-- contact start  -->
 
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" data-aos="fade-up" data-aos-duration="2000">
       <div class="contact-title">
         <h1>Contact Me</h1>
       </div>
@@ -181,7 +191,7 @@
 
     <!-- contact finish  -->
 
-    <footer>
+    <footer >
       <div class="footer">
         <p>
           © 2023 <a href="/">Pages Fajar</a> - <a href="/about-me/">About</a> -
@@ -196,6 +206,11 @@
     <!-- Feather Icon -->
     <script>
       feather.replace();
+    </script>
+
+    <!-- AOS -->
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
