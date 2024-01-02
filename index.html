@@ -23,20 +23,20 @@
       AOS.init();
     </script>
   </head>
-  <body>
+  <body class="dark-theme light-theme">
     <!-- Navbar Selesai -->
 
-    <nav class="navbar">
+    <nav class="navbar navbar-light navbar-dark" id="navbar">
       <div class="navbar-brand" data-aos="fade-right" data-aos-duration="2000">
         <img src="./img/profil.jpg" alt="Logo" />
         <h5>Portofolio || Alfajjar</h5>
       </div>
 
-      <div class="menu-icon" id="menu-icon" data-aos="fade-left" data-aos-duration="2000">
+      <div class="menu-icon" id="menu-icon">
         <i data-feather="menu"></i>
       </div>
 
-      <div class="menu-icon hidden" id="menu-iconX" >
+      <div class="menu-icon hidden" id="menu-iconX">
         <i data-feather="x"></i>
       </div>
       <ul class="nav-item hidden" id="menu-list">
@@ -65,7 +65,19 @@
 
     <section class="home" id="home">
       <div class="title">
-        <h1 data-aos="fade-down" data-aos-duration="2000">Mochammad Alfajjar || Just a student</h1>
+        <div class="home-brand" data-aos="fade-down" data-aos-duration="2000">
+          <img src="./img/logo.png" alt="Fajar" width="5%" />
+          <h4>Fajar Pages💫</h4>
+          <button id="lightMode">
+            <i data-feather="sun"></i>
+          </button>
+          <button id="darkMode">
+            <i data-feather="moon"></i>
+          </button>
+        </div>
+        <h1 data-aos="fade-down" data-aos-duration="2000">
+          Mochammad Alfajjar || Just a student
+        </h1>
       </div>
       <div class="description">
         <p data-aos="fade-right" data-aos-duration="2000">
@@ -161,7 +173,12 @@
 
     <!-- contact start  -->
 
-    <section class="contact" id="contact" data-aos="fade-up" data-aos-duration="2000">
+    <section
+      class="contact"
+      id="contact"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="contact-title">
         <h1>Contact Me</h1>
       </div>
@@ -191,7 +208,7 @@
 
     <!-- contact finish  -->
 
-    <footer >
+    <footer>
       <div class="footer">
         <p>
           © 2023 <a href="/">Pages Fajar</a> - <a href="/about-me/">About</a> -

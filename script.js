@@ -114,3 +114,43 @@ myForm.addEventListener("submit", function(event) {
     myForm.reset();
     sendToWhatsApp();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const darkModeBtn = document.getElementById('darkMode');
+    const lightModeBtn = document.getElementById('lightMode');
+    const navbar = document.getElementById("navbar");
+    const body = document.body;
+
+    function enableDarkTheme() {
+        body.classList.add('dark-theme');
+        body.classList.remove('light-theme');
+        localStorage.setItem('theme', 'dark');
+        lightModeBtn.style.display = 'block';
+        lightModeBtn.style.color = 'white';
+        darkModeBtn.style.display = 'none';
+        navbar.classList.add("navbar-dark");
+        navbar.classList.remove("navbar-light");
+    }
+  
+    function enableLightTheme() {
+        body.classList.add('light-theme');
+        body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+        lightModeBtn.style.display = 'none';
+        darkModeBtn.style.display = 'block';
+        navbar.classList.add("navbar-light");
+        navbar.classList.remove("navbar-dark");
+
+    }
+  
+    darkModeBtn.addEventListener('click', enableDarkTheme);
+    lightModeBtn.addEventListener('click', enableLightTheme);
+  
+      // Cek preferensi tema di localStorage saat halaman dimuat
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        enableDarkTheme();
+    } else {
+        enableLightTheme();
+    }
+  });

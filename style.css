@@ -17,14 +17,9 @@
     font-family: Poppins , sans-serif;
 }
 
-body {
-    background: var(--grey);
-}
-
 /* Style Navbar Start */
 
 .navbar {
-    background: rgb(15,15,15,0.8);
     display: flex;
     justify-content: space-around;
     padding: 10px 7%;
@@ -479,4 +474,50 @@ form :focus {
     color: var(--bg);
     font-size: 12px;
     margin: 10px;
+}
+
+.navbar-dark {
+    background: rgb(15,15,15,0.8);
+}
+
+.navbar-light {
+    background: rgba(83, 75, 75, 0.8);
+}
+
+.home 
+.title 
+.home-brand {
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    justify-content: start;
+}
+
+.home 
+.title
+.home-brand img, h4 {
+    display: block;
+    margin: 0px 10px;
+}
+
+#darkMode,
+#lightMode {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Dark Theme */
+* .dark-theme {
+    background: var(--grey);
+    color: #fff;
+}
+
+/* Light Theme */
+* .light-theme { 
+    background: #979090;
+    color: #000;
 }
