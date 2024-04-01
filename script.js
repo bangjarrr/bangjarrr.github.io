@@ -17,7 +17,6 @@ menuIconX.addEventListener('click', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Menangani klik pada menu navbar untuk scroll halus
     var menuLinks = document.querySelectorAll('.nav-item a');
 
     menuLinks.forEach(function (link) {
