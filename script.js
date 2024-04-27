@@ -60,10 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function sendToWA() {
     
     try {
-        var nomorWhatsApp = '6281615650796';
-        var nama = document.getElementById('nama').value;
-        var email = document.getElementById('email').value;
-        var pesan = document.getElementById('pesan').value;
+        const nama = document.getElementById('nama').value;
+        const email = document.getElementById('email').value;
+        const pesan = document.getElementById('pesan').value;
         
         if (!nama || !email || !pesan) {
             alert('Harap isi semua form sebelum mengirim pesan.');
@@ -95,10 +94,13 @@ function sendToWA() {
             return;
         }
         
-        var linkWhatsApp = 'https://wa.me/' + nomorWhatsApp +
-                           '?text=Nama : %20' + encodeURIComponent(nama) +
-                           '%0AEmail : %20' + encodeURIComponent(email) +
-                           '%0AMessage : %20' + encodeURIComponent(pesan);
+
+
+        const linkWhatsApp = `https://wa.me/6281615650796?text=
+                            Name : ${encodeURIComponent(nama)} %20 ,
+                            %0A Mail : ${encodeURIComponent(email)} %20 ,
+                            %0A Message : ${encodeURIComponent(pesan)} .
+                            `
         window.open(linkWhatsApp, '_blank');
     } catch (error) {
         
@@ -111,7 +113,7 @@ var myForm = document.getElementById('my-form');
 myForm.addEventListener("submit", function(event) {
     event.preventDefault();
     myForm.reset();
-    sendToWhatsApp();
+    sendToWA()
 });
 
 document.addEventListener('DOMContentLoaded', function () {
