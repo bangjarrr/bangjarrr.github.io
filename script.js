@@ -1,5 +1,3 @@
-// Menangani peristiwa apabila button pada tampilan hp saat ditekan
-
 var menuIcon = document.getElementById('menu-icon')
 var menuList = document.getElementById('menu-list')
 var menuIconX = document.getElementById('menu-iconX')
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 var targetElement = document.querySelector(hash);
 
                 if (targetElement) {
-                    // Animasi scroll halus
                     var targetOffset = targetElement.offsetTop;
                     var duration = 1500;
                     var startTime = performance.now();
@@ -69,26 +66,19 @@ function sendToWA() {
             return;
         }
         
-        // FUngsi Validasi EMail
-        
         function validateEmail() {
             var emailInput = document.getElementById('email');
             var email = emailInput.value;
         
-            // Pola ekspresi reguler untuk validasi email
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
             if (emailRegex.test(email)) {
-                // Email valid
                 return true;
             } else {
-                // Email tidak valid
                 return false;
             }
         }
 
-        // memanggil alert email valid
-        
         if (!validateEmail()) {
             alert('Harap isi email dengan benar sebelum mengirim pesan.');
             return;
@@ -104,7 +94,6 @@ function sendToWA() {
         window.open(linkWhatsApp, '_blank');
     } catch (error) {
         
-        // Menangkap dan menanggapi kesalahan
         alert('Terjadi kesalahan: ' + error.message);
     }
 }
@@ -147,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
     darkModeBtn.addEventListener('click', enableDarkTheme);
     lightModeBtn.addEventListener('click', enableLightTheme);
   
-      // Cek preferensi tema di localStorage saat halaman dimuat
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         enableDarkTheme();
