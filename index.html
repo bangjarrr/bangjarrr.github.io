@@ -23,7 +23,7 @@
     <meta property="og:locale" content="id, ID">
     <meta property="og:description" content="portofolio, Alfajjar">
 
-    <base href="bangjarrr.github.io">
+    <!-- <base href="https://bangjarrr.github.io"> -->
 
     <title>BlogPribadi || Alfajjar</title>
     <link rel="icon" type="image/x-icon" href="./img/logo.png" />
@@ -40,10 +40,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- AOS -->
-    <script>
-        AOS.init();
-    </script>
+
 </head>
 
 <body class="dark-theme light-theme">
@@ -202,7 +199,7 @@
             <h1>Contact Me</h1>
         </div>
         <div class="contact-form">
-            <form id="my-form" onsubmit="sendToWA()">
+            <form id="my-form" >
                 <div class="contact-name">
                     <label for="nama">Name :</label>
                     <br />
@@ -218,8 +215,8 @@
                     <br />
                     <textarea name="pesan" id="pesan" cols="30" rows="5" placeholder="entry your message"></textarea>
                 </div>
-                <button type="submit" id="btn-kirim">
-                    Send
+                <button type="submit" id="btn-kirim" style="cursor: pointer;">
+                    Send Message
                 </button>
             </form>
         </div>
