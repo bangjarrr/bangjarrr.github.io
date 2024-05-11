@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body class="dark-theme light-theme">
@@ -208,7 +208,7 @@
             <h1>Contact Me</h1>
         </div>
         <div class="contact-form">
-            <form id="my-form">
+            <form id="my-form" method="post">
                 <div class="contact-name">
                     <label for="nama">Name :</label>
                     <br />
@@ -224,6 +224,7 @@
                     <br />
                     <textarea name="pesan" id="pesan" cols="30" rows="5" placeholder="entry your message"></textarea>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6LdZ_NgpAAAAAB0dvSXNsonB5uAGCTqdMWI_5I-k" style="display: flex; justify-content: center"></div>
                 <button type="submit" id="btn-kirim" style="cursor: pointer;">
                     Send Message
                 </button>
@@ -260,6 +261,7 @@
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             sendToEmail();
+            form.reset();
         });
 
         function sendToEmail() {
