@@ -261,7 +261,6 @@
         form.addEventListener("submit", function (event) {
             event.preventDefault();
             sendToEmail();
-            form.reset();
         });
 
         function sendToEmail() {
@@ -293,7 +292,12 @@
                     });
                     form.reset();
                 }, function (error) {
-                    throw new Error('Terjadi kesalahan saat mengirim email: ' + error);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: 'Terjadi kesalahan saat mengirim pesan.',
+                        confirmButtonText: "Tutup...",
+                    });
                 });
             } catch (error) {
                 Swal.fire({
