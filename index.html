@@ -35,6 +35,8 @@
     <script src="https://unpkg.com/feather-icons"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <!-- Link Animasi saat di scroll -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -199,7 +201,7 @@
             <h1>Contact Me</h1>
         </div>
         <div class="contact-form">
-            <form id="my-form" >
+            <form id="my-form" onsubmit="sendToEmail()">
                 <div class="contact-name">
                     <label for="nama">Name :</label>
                     <br />
@@ -244,6 +246,55 @@
     <!-- AOS -->
     <script>
         AOS.init();
+    </script>
+    <script>
+        const form = document.getElementById("my-form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            sendToEmail();
+        });
+
+        function sendToEmail() {
+            try {
+                emailjs.init('Ayx-Zj0F9khkixi_W');
+                const nama = document.getElementById("nama").value;
+                const email = document.getElementById("email").value;
+                const pesan = document.getElementById("pesan").value;
+
+                if (!nama || !email || !pesan) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Harap isi semua form sebelum mengirim pesan.",
+                    });
+                    return;
+                }
+
+                emailjs.send("portofolio", "portofolio", {
+                    email: email,
+                    nama: nama,
+                    pesan: pesan,
+                }).then(function (response) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Berhasil",
+                        text: "Email berhasil dikirim!",
+                        confirmButtonText: "Tutup",
+                    });
+                    form.reset();
+                }, function (error) {
+                    throw new Error('Terjadi kesalahan saat mengirim email: ' + error);
+                });
+            } catch (error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: `Terjadi kesalahan saat mengirim pesan. ${error.message}`,
+                    confirmButtonText: "Tutup...",
+                });
+            }
+        }
     </script>
 </body>
 
